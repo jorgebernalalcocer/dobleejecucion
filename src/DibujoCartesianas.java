@@ -1,5 +1,7 @@
 
 
+
+
 import javax.swing.JFrame;
 import java.awt.*;
 import java.awt.event.ComponentEvent;
@@ -45,8 +47,13 @@ public class DibujoCartesianas {
 
 
     private static Color devuelveColor(double x, double y) {
-        if (x < 0.23) {
+        if (x > 0.3) {
+            
+            if (y < 0.5 && y > 0) {
+                return new Color(198, 11, 30);
+            }
             return new Color(5, 11, 198);
+            
         }
 
         if (y < 0.22 && y > 0.11) {
@@ -67,8 +74,8 @@ public class DibujoCartesianas {
 
     //NO MODIFICAR A PARTIR DE AQUÍ
 
-    public static int ANCHO = 400;
-    public static int ALTO = 400;
+    public static int ANCHO = 600;
+    public static int ALTO = 300;
     public static int diagonal = (int) Math.sqrt(ANCHO * ANCHO + ALTO * ALTO);
 
     public static void repinta(Canvas cnvs) {
